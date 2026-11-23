@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Akaki Jvarsheishvili</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: product-launch calm: few words, huge type, lots of air
+   IDEA: a spec page for a person: each section is a "feature" with one big number
+   PICTURE: the portrait floating over a single fine volatility line on black
+   COLOUR and TYPE: black, white, #f5f5f7 panels, one accent (#2997ff link blue, sparingly); Inter, tight tracking
+   LAYOUT: full-height hero, spec grid, two large project tiles + one wide, quiet footer */
+:root{--bg:#fff;--ink:#1d1d1f;--mute:#6e6e73;--panel:#f5f5f7;--dark:#000;--onDark:#f5f5f7;--muteDark:#a1a1a6;--accent:#0071e3;--accentDark:#2997ff}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.47 Inter,-apple-system,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+nav{position:fixed;inset:0 0 auto;z-index:10;height:48px;background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px)}
+nav .in{max-width:1000px;margin:0 auto;height:100%;display:flex;align-items:center;gap:28px;padding:0 22px;overflow-x:auto;scrollbar-width:none}
+nav b{color:#f5f5f7;font-weight:600;font-size:15px;margin-right:auto;white-space:nowrap}
+nav a{color:#d2d2d7;font-size:13px;white-space:nowrap;padding:12px 0}nav a:hover{color:#fff;text-decoration:none}
+.hero{background:var(--dark);color:var(--onDark);min-height:100svh;display:grid;place-items:center;text-align:center;padding:96px 22px 64px;position:relative;overflow:hidden}
+.hero svg.line{position:absolute;inset:auto 0 18% 0;width:100%;height:30%;opacity:.55}
+.hero .c{position:relative;max-width:900px}
+.hero img{width:clamp(120px,18vw,168px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 30px 80px rgba(41,151,255,.18),0 0 0 1px rgba(255,255,255,.08)}
+.eyebrow{color:var(--muteDark);font-size:clamp(17px,2vw,21px);font-weight:600;margin:28px 0 8px}
+h1{font-size:clamp(44px,8vw,96px);line-height:1.02;letter-spacing:-.035em;font-weight:700;margin:0;text-wrap:balance}
+.hero p.sub{font-size:clamp(19px,2.4vw,26px);color:var(--muteDark);line-height:1.3;letter-spacing:-.01em;max-width:30ch;margin:22px auto 32px;text-wrap:balance}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 22px;border-radius:980px;background:var(--accent);color:#fff;font-size:17px;font-weight:500}
+.pill.ghost{background:transparent;color:var(--accentDark);border:1px solid var(--accentDark)}
+.pill:hover{text-decoration:none;filter:brightness(1.08)}
+.pill:focus-visible,nav a:focus-visible{outline:3px solid var(--accentDark);outline-offset:3px}
+section{padding:clamp(72px,10vw,128px) 22px}
+.w{max-width:1000px;margin:0 auto}
+h2{font-size:clamp(36px,5.5vw,64px);line-height:1.05;letter-spacing:-.03em;font-weight:700;margin:0 0 14px;text-wrap:balance}
+.kicker{font-size:clamp(17px,2vw,21px);font-weight:600;color:var(--mute);margin:0 0 10px}
+.intro{font-size:clamp(19px,2.2vw,24px);line-height:1.38;color:var(--mute);max-width:36em;margin:0 0 52px;letter-spacing:-.005em}
+.intro strong{color:var(--ink);font-weight:600}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:2px;background:#d2d2d7;border-radius:24px;overflow:hidden;margin-bottom:22px}
+.spec div{background:var(--panel);padding:30px 26px}
+.spec strong{display:block;font-size:clamp(40px,5vw,56px);line-height:1;letter-spacing:-.04em;font-weight:700;white-space:nowrap}
+.spec span{display:block;margin-top:10px;font-size:15px;color:var(--mute);line-height:1.35}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px}
+.tile{background:var(--panel);border-radius:28px;padding:clamp(28px,4vw,44px)}
+.tile h3{font-size:clamp(24px,3vw,32px);letter-spacing:-.02em;line-height:1.1;margin:0 0 6px;font-weight:700}
+.tile .tag{font-size:14px;color:var(--mute);margin:0 0 18px}
+.tile ul{margin:0;padding:0;list-style:none}
+.tile li{padding:12px 0;border-top:1px solid #d2d2d7;font-size:16px;line-height:1.45}
+.tile li:first-child{border-top:0;padding-top:0}
+.big{font-size:clamp(48px,7vw,80px);font-weight:700;letter-spacing:-.045em;line-height:1;margin:6px 0 4px}
+.dark{background:var(--dark);color:var(--onDark)}
+.dark .kicker,.dark .intro,.dark .tag{color:var(--muteDark)}
+.dark .intro strong{color:#fff}
+.dark .tile{background:#161617}
+.dark .tile li{border-color:#333336}
+.dark a{color:var(--accentDark)}
+.wide{grid-column:1/-1}
+.grad{background:linear-gradient(90deg,#2997ff,#5ac8fa);-webkit-background-clip:text;background-clip:text;color:transparent}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:34px 40px}
+.skills h4{font-size:15px;color:var(--mute);font-weight:600;margin:0 0 6px}
+.skills p{margin:0;font-size:19px;line-height:1.4;letter-spacing:-.01em}
+footer{background:var(--panel);padding:56px 22px;font-size:14px;color:var(--mute)}
+footer .w{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;border-top:1px solid #d2d2d7;padding-top:22px}
+.r{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.r.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:600px){nav .in{gap:18px}.spec div{padding:24px 20px}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="in"><b>Akaki Jvarsheishvili</b><a href="#research">Research</a><a href="#projects">Projects</a><a href="#teaching">Teaching</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+  <svg class="line" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true"><path id="vol" fill="none" stroke="#2997ff" stroke-width="1.6" vector-effect="non-scaling-stroke"/></svg>
+  <div class="c">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADIAMgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7LooooAKKKKACiiigAoopNw3YyM4zj2oAWimSOkcbO7BUUZJJwAB3rltJ+IXhPUtXu9Li1e1S5tXZSrygbwMZIyeRzSuB1lFZx1vRwoY6pZYIyP36/wCNcTpPxP02/wDiWnhiKW0ksbq0eW0uo5QS0sZG9DzjowIx6UN2Cx6PRSEgDJIA+tef+P8A4hx+H9ftdDsBBcX80IneMhnO0ttAAXABJBySQBx1yBQ3YErnoOKDXnGg/FjQbjW30PWBLpmoIAcTIQrkjPGCccc5J5FehW80M8YkhlSVD0ZGBB/EUJphaxLRRRTAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACql88UeJTIVkQEjHcdwR6cfpXnfxh+LeneArqDSxpl/f6ncBWjSGMFACTwSSCScHgA46nFfJ/xt+PviTxFdXGn6de3OiaS2BMkRxLKcYIZgc44xgGpbGl1PpD43fHrwt4O0e505IU1bU5keI20U6FU4wS5BJA56YzXwp4r8a33iPW5NRmENvI2FjigQIqKOAAB7dSeTXOX9+942FXI5+ZicsT3JJqG0iMWWfBYj0yal67jOlPiHV2hVjqV0qqcD982Pw5qvY6/qWmX8Oo2V5JFPASUYHpng/mODWVJDcOirK6omOFU5IHuap3zGMmBCQBwSR/Wiwtj13xR8c/HPiPwuuh3utzLajaSYgIycdASMHHQ49RXAnWtXjvFvUv7iSdAMOZCWwDkZ59eaw7MwGExu+CQQSTjip7WNTOCtyDjg80NXHc7i0+Jeu20DXDXDSXjABJ2GZIsEnCnt1qbS/iv42sFK2OvX1uGfzCFmYAsepIBx2FcZPbLkMrbgPQioo5DuKxrtYdVPce1JILn018KP2qvEuk38Fn43t01bS2IVp4UCXEQ/vY6OB6cH3r7R0bUrLWNKtdU024S5s7qJZYJUOQ6EZBH4GvyTeZ2xtIB7CvqD9iP4v3un6/b/AA112VpLC+LHTJHJzBLgkx8/wtg4HY/WnFtOzBq+p9sUUUVoSFFFFABRRRQAUUUUAFFFFABRRRQAVgeMfE1h4ZsRc6hJ5SMrkSNwihRklmPA46Dqa36yPFlhpOpeHL611yxgvdPaFmmhmUMrgAn8+OvWkwPhj9oj4lRX3i3W4NDeK4lu5XEmoh95WAAKscR6KCBkkcnPUZOfnC5uXk3AkkE5IPrXTa/c241W+mtIligBbyYic7VJOFz7DArlEQyzEYwSScelTFdWNsYrMCCCRipjdTEBQxUD0qOaIxtgnNNjGWAzjJqmItwXL+arSvuA4wakubmOY9SMDAA71WuYwjDBBOOQKbbRmWZUXqaVuoCSKry7VOB70JGQ2CxH0q3cweXOEUZKYBPvTruEIUYHGQCQKLlcpDJG6AYnHrgHBqSEzopaQsydAQc8/Wr7QRskb7QRgc4qvcW8tu7LEzFCdyjsc0r3CxTd5FO4HIPSvTv2dLVtT+M3hG2+1Nbl9QjPnIQGUjJ4J7nGB9a8ummYsQRj1FXNA1m90XWLHVLGVormyuEuIXU4KujAg/mBQ0Fz9ggMDGTxS1h+A/EFv4q8F6N4ktQRFqVnFchT1UsoJB+hyPwrcqyQooooAKKKKACiiigAooooAKKKKACvGv2svE7aJ8KdZtLe7FrfSwRtbnJBlHmYcAjuAAfxHrXstfNn7eNvKfA2m3ZtlkgExhMueYnJBA9wQGH1ApPYFufBc9w0txI4JwOue9VAxSUkHJq3PGFEqqBgnPPUVQPX3zSWoEkuS+45weQTV6yt4iyu+MAZx2Jp0Vssxgt1G5iM5HJ5FbV74faz0uC8LN+8wCmfY1Lkr2NFFtXMCdI5rsBFwpOKtW1mbWdZGI2569sUIsCymVEYMhAZScgg1dnz5QYglGAAPUdKG2FiW8jicFYyC7kdOxFUr+zke+WBCeYwOBnnvUhtp3hFzEWKhgGIPTPrXW+GLODUtR063MSpNkpIWPBLEYIP14NQ5WVy4xucmIXgQWr53AZweo70vmhgpc/Mo2nPeur+IXh59M1qJCFVnOQoOSQB3rmrvT3jMk4BEeRx7ntTjJNJg48rszHvIkaWXccHqp9RVS3iLzCNgeTge9assCSXUSvyrPtx7EGkitGSaMHoAGJHsef5GqvoZWsfcv7EXihvEXw6i0KLV2tr7QJhG9mcMslsckHB5GSWGQeCBkc4P0tX5QeC9d8Q+FfHdlrPhW/kt7xZwFw5AfJGUcdCp7g1+p/h28l1HQrC/uIfImuLdJHiznYxUEjPfBzVITNCiiiqEFFFFABRRRQAUUUUAFFFFABXzb+3/dyRfDLR7NHwtxqgLjuQqMR+GSK+kq+V/wBv23vrux8MpDG5tohdTOQMgEBBz6cH9aT2BbnxKFXz5vNPyuOCexrPRN84VRnJ4zV2Tc8vl9zwK7Lwf4Ol1HVbeBkY7QJZmAyAp5A+prOU1FXNYwc3ZFbwrpTR4vSrM4BIyCRjp9B3pNd1K6uXS0VsxoSQo5wTx/KvdLT4a6JqlmftjPbsHJURNg8jnNXtJ+D+j22x0VSVbduckk9+f8K5Pbxvfqdqw8nZI8y8HeA3vvC93LcWjm8lIZTtwEAHAP1zXIajol7pontZI2A8wDYwwc8cCvru3gstCslgFvNc5B+WOPJJPr/9esMfD638RamdU1u2FtCCTDbKQWJP8Tn19hURxDTbexrLCqytufLM1o1uB9mjuI2P+siZCQfoR/WtjQUv1aNraJnlfICquXQAgkgexGfwr6bj+GHh+CfzvLZx6MwIFVNK8C6boviB9Vto1KgFUj/ug+gqniU0JYRp3ueI+Jrf+0UgvI4b291GQYkfYz5IAAwcAAZ/lWN4T8PS6rJf/bmaN7ZgFiYY+Y45P4Gvpq40LS5ZRcJCYWUkgocdfUdK5Dw/4Rij1nWp3ORLOHjAI6AADI/An8azVfRobw92ne588eNtLXTblPLHKNhMDHGBk/rXNi7a3iyxy3P65/xr2P4u+HHFw0kW75SWwR1J7A14hqcbpOysuD1I9K7aMlJI4a0ORtWNPwfa6xqfiC0t9Ftzdai9wht4sj53ByBzj0r9M/gH4+HxC8ARarLpz6deWc7WN5b8lUmjADbT0I5H06Gvzy/Z91HTdL+Jek32rO0dlBNmWRQfkBBG4kcgDOc9q/SP4YeCtC8D6BPp3h4N9ju7uS9yX3kmQg/eOSRgAAkk4rZbmD2OtoooqiQooooAKKKKACiiigAooooAK4n4x+EI/GHgjU7GO2jmv/sVxHab/wC+6cDPbJVefau2ooA/I4aZcW/iIWN1E0c0Vx5UiMMFWBwQR7EGve7VbqyEdlpMaR3c6gNMQCEUDHT1rnPi81jq/wC0xqVzp+02dxqvyMq4VygAYj1ywJz3zXo8tmYALhF5AAyBziuCvKzSPQw0G1cy7XQvEcEZkh1hTJ1wFxk1najqXxB05wGu2kUcBgQQR9MVdufEN7Fdi1t4JZZXyEROBj1Zu30HNcbrPjfxDcXUllLYpGEkKZXeSCCRg5PXOOlZxUnrZHQ+WLtd3O70Dxf4hSALfMHcY5wMkc8fyr0Hw94imvLZCVwQPm5715C+k65a30FrMWEkyhlyCVORnGex9j+dep/DTT5FEkV9GNwI+h4rnq2XTU6qN/kHivxRdWYEVuuWPPPIrhvEniXXbuAi0naJyuODjGTzivQfiNpIlijWygXzDkZHbpXlEujapPqr2IEjMgyQuUUd+XwfyHNFJp9NRVovvoN0efxteSbTqEqoeCWcAAfhW2/h/WmInbWikoOQVHU1w9p4+bTJnsZfD6ThGILLNKrYBxw245PXjHpXSQeImllAtJbiNuslpdcuoPdW7/jW0lJdDmjytWT1Ld3eXV15mma3ErXCoTHMo4kA7n0NfP8A4/sGtPE8sQXClQQPavoTL3kkckiksvIJHrXk3xqsPK1+0mQEGWEhvwNa0HaVu5hiE7XZofse6bb6r8c9HsLy1jurSZZ1nikGUdPKfIIPUV+lNpbw2lpFa20SRQQoI40QYVFAwAB2AAxX5tfsl6hqeh/GvTLnTNEuNZmbfCYICAwVhguSeAACSc4HvX6VKSVyRj2rui7nBIWiiiqJCiiigAooooAKKKKACiiigAHSqGvmYaHfm2/1wtpDHj+9tOP1xV+kOCMGkwWjPzavrFrTxLpmpnIAuwHz1BJ5r3/SLWO5slDKDkD8awfjp4JTQvFupWaKqWl4PtNoQPuZOQB9CCPoK3/B04l061Y8koCfrgV5VdPruj3KFr3WzIrvQIkkV1hCgc5AqmPDtj9vF6dJsnnBB8148kkdCRnBPuR2rvwiugDKDUMlgrHkYHpXLzySsmdsacXq0YipI4O/BYjkgAH861fDkKpKSOp6mi9iSCAlRgAcmrHh5c4fHU1Kbepo4pDfEMQLrnqKw7q3kUh12k44JGT+ddD4hRlRpOSBz+FVrSNLi2UkZBHWlzNO6BRT3PPbnwdo9xqbX8ukwGctuyrsFLepXOM9+lSjwpbzXPntbpuJ+9jkfjXe/YkVhxmpHWOOI4UDj0q/atmboxWqRwd7pMdnESMZHevFfivEL7xTZWjNgeUd2OwyT/SvfPE0gWIkjr2rwjWcXfjO8nlG4xDy0B7ADn+ZrqoNpts4a8VJpI9E/ZDEdh8XbK1tYlSOSCZWIAyf3bHk9+QK+2q+W/2OPCUs2sXni+4jIgt0Nvbkj7zsOcfRTz/vCvqX2r0aN+XU8zFW57IKKKK1OcKKKKACiiigAooooAKKKKACiiigDyb9pbQDqHhKHWIY902nyfOQP+WbcHPsDj8zXlHgR0NigHGzjHpX1PqNpb39jPY3cYkgnQxyKe4IwRXzC2mHw34s1PQyxZbaYqjHupAKn64IzXDi4aXR6OCq/ZZ2NsQUFWW4Ge9ZtjLkDPpV7cWAya81pHsRloZmu48g7mwpPOak8PahayIRFKjFDggEHBqr4tsZdQ0iW2t5BHKcFSemfQ15ZbaDqvhmeW4V3Q3LZOwkrn+lOMU09bBUntZHsWu6pZxRhZ5UUuMAE9aZo4VrRWQ5U9Pzrxy/8P6treq2t8088jxcKhJKj3x617F4Ys5rPSIoJzmQDn1pTiopO4QkXONxGMYqpfnahFXnwGJrL1OYBMk9KmOo5SON8WuRht3AHSvGry3kXUZ2GDLcyscjoqE/4V6v4ruSwfapIAwABkk9gB3q/wDCj4V6lr+u2ravo93aadEwe4knhaLeo52LkAkk8cdASa7qMW0rI82pUjFuTZ7D+y/fW1z8LorKO1Nrc6fdy291GwwS5IdWP1R0P6dq9UrkfAXh+fR9T8SXssP2eLUNQRrWAEHbDFBHEpOOhJQn1xjPOa67vXpJWSR5EneTYUUUVQgooooAKKKKACiiigAooooAKKKKAMjxbqjaN4bvtTjVGkgiJjDnCljwMnsMkV8e6N4t1fxFr+pX2u7E1BrgrKiDCrjgAAknHH6V9p3MENzA0E8SyxOMMjjIYe4NfPHxe+ECadrN1408N2xt4oo2e+hEuUdc5LKvUEHkjpjJHU1hWi5R0NqElGVzP0u+yFUkk465rYS9GDlgAOpJrhNMvNqq2c1sqBfRNA0jKHHJBwce1eTJWep7UJXVkb11rOm28G+4uoxjtnrWY/ivQLvME5VVByCcEGuTu/BWlifdPd6hJGDnabkgfjjBqreeDPCNzFj7Zf2sowPluiQfzNWowfU76dPS+jPQLPxP4eBWKN44wOAxAGfyraTUbJ4w6ToQRkEGvKrfwZ4TEQiimvp3JOXN2wJ/I1q6Z4NsY2V/tt+VQ5VXuSR9KmcYpbkVaVldaHdSXQbkEEHuDWBrt6FUqG56daS6ultUMatkKMA5zXLarfltzZyT61MI3dziqTsrHLfEXWzp2nLcJKY5DcRhSDg5DAnH4CvujTp1urC3ulPyzRLIv0IB/rX5qfE29uvEHi/T/DemRSXUyuFEUQLM8rkYAA9Bj8zX6U6Vb/ZdLtLXG3yYUjxnOMADH6V69CNonj1pXZaooorcwCiiigAooooAKKKKACiiigAooooAKKKKACq+oWsd7YXFnKAY54mjcYzwwIP6GrFIxVVJJAAHJNAHxhLo+s+EdZn8O+I/La6tWCiaJspPGRlHHcEjGQeQc1vWAc7XiPOKpfFHxFpvirxxqOs6RKZrFyIopcYDhAELD2JBIPcYPesvRNZexnWK4OUJ4Y15VaKbdj16Emoq52L2M9+u37pPGao3fgGW4Qnz13HnkGtnR9XgnQlSoIOBz1HrWxLqI8sBSoOOxrnUZJ6HZzo5XTfBdzZIGWVSRzjnNXZ1ltIirHLAd62otSXZy657gGsrVdQgR2aYqABxyKlpt6lc8bHM6g8pUs5IB55rldYvBGCikF8HB9KseKfEKzTtFbsMjjjoK5wO0hJY5Y9zXRCLWrOGpK7djrP2VPg/4kvvida/E69kt4dHtLidogz7pJ32lAAB0AJzk+nGa+1hXhf7KXizRpNCuPBRugmsWkj3QgbgyQOR8yeuDkHuMivdO9epT1ijy53uwoooqyAooooAKKKKACiiigAooooAKKKKACiiigArhPj/AKvJofwY8VajDIYpRpzxRuDgq0mIwR75cYrsdSvbTTdPuNQv7iK2tLeMyzTSMAqIBkknsABXxT+0x+0EvjfTLvwj4ZtRFoTSKZbqYHzbnYwYYH8CZAPOScDOORQlfQTdjC8BPHceEbBo/wCCMoR6EEg/yzWvMgdCCMnHFee/BjXIor59FvJAIrlgYCTwH9PxH6ivT720ZJCCOnevOrRcJtM9WjJSgrGZa3t9ZtiJsj+6alfxNq0II8oEezZp7xcHI57VVniyCrLnvmovYtxv1Iz4p1MEkMq5/GqN3quoXzEyzkAjBAqVbAu5O3ApslsEzjt2outybW0KKREMSSST3NWIR84NPCZPTFRXMqW0TSyMFVQSST6ChakvRajPCmu/8I7+0D4J1OKYxf6StvckHAMUjbCD7Yc/lX6Ed6/J3V9WlvfEb6isjKVceSQcFQDwR+IzX6Hfs/8Axd0T4keGraE3cUPiK2hC31k7AOxAAMqDup68dM4PYn0YRcYq5505KTbR6pRRRVkhRRRQAUUUUAFFFFABRRRQAUUx3WNC7sFUDJJOAB9a8g+J37RPw78FCa1j1A67qceQbXTiHVT6NJ90e4BJHpQB61e3VtZWk13eXEdvbwoXklkYKiKBkkk8AAetfOXxK/a08J6LPLYeD9Nn8Q3KZH2l2MVuCO44LOM+wHoa+f8A44fHXxX8TFSxnUaLoatuFjAzESnggyscFyOCBgAdcZ5rx+5mILbeGbJDHjI5zx0qlHuS5dj0r4j/ABx+Ifj8zWWs6sYNMJG+wtE8qD1AbGS3TPzE9K86lkJPXg1RgViDJ5jO5GXz25wOc81ZRgVAxWiSRLdyazuGtp0kjZgykEEHBBHQivov4fa/D4t8PgyFRqFuoWZc8txwwHof55r5uKFTkitzwdr15oGrxX1o5DIcFScBweoPsa58RR9orrdG+HrOnLXZn0HNAyuV2kAetM+zBhzzWppGpaf4g0eHVLJlKyD514yjDqD7ikdUVu1eXqtGerdNXT0MaWDywQBkVQnjyTx+FdBMiMDjms+5iVck9KEJmMYyB0xXnfxH8QKSdLtZMgf65lPX2rX+IPi1LJX06wkBnIIkcc7Pp715LcyySyMWZiSc5PWu7D0HpKRwYivb3YkiNz6HNauj6nfaVfwajpt3NaXcDh4poXKuhHQgjkVkQDjJ6+9TK2CSTwK7rHGmfYPwc/ays/Ig0f4kW8qTKAo1a2TcGHrLGOQfUrnPoK+oPDmv6N4j0qPVNB1S11KykGVmt5Q6/Q46H2PIr8l/NLTDy0UszjDE/ocnGPrXTfD3x14o8DawuqeF9ansJcnzIkJMcoHQOhyrDrwQcdsdahx7FKXc/Veivmr4N/tWeHtfEOmePIY9A1FiFF4gJs5T7k5MZ+uR7ivo+1nguraO4tZo54ZFDJJGwZXB5BBHBB9RUbFE1FFFABRRRQB4z8Rv2j/h14S823tLyTX75MjyrDBjDDs0p+Ufhkj0r508a/tSfEXXJ3i0aWz8O2z8RpbxiSXBP8UjggcdwBRRVxSIb1PJPEfjnxp4iDLrPiXVr1GP+rubt3Xk8gKTgVzYypYy5LAkBSMDODz16iiirSQmI6kOBMWI25ADDqRkHv7ZHXtVV42aUiQsGQ7QhGcDJz9P/r0UUWEyRYg7EgqrYOQRgYA9fXjpRCCVDDnHpRRQItCPcAG6+9Ai2HI/SiimwOp8C+Kr3w3qIeNme2kwJoSeHHr7EdjXt9pcwapZRahp0/m28oyCOoPcEdiKKK4MVBLU9HCTbuiZI5MYwSa4n4k+J4NGtmsYHWS+cfMAc+UD3Pv7UUVhQgpT1NsRJxhoeJXbvcSl2LEk5JJyTUPlc5NFFeqjyQA9BSTMyBVjUM5OQCM8Dk8UUUAQoFwqvIQhJJA5I98cDn+lSQbt0axBVcNkMTgnpjOTjAx+tFFAMVGXKNIxYEncgODj2OMc16Z8IvjX48+HE8MWm6gtxo+7DafeZaAjOSRjlDz1HtkHpRRSaTGj7H+Ef7RfgLx4kNndXS6BrD4H2S9kARz/ANM5OA30OD7V7MpDKCpBB6Giisi0LRRRQM//2Q==" alt="Portrait of Akaki Jvarsheishvili">
+    <p class="eyebrow">Computer Science · Caldwell University · 2027</p>
+    <h1>Builds AI.<br><span class="grad">Then proves it works.</span></h1>
+    <p class="sub">Pre-registered experiments, independent reproduction, and honest negative results.</p>
+    <div class="cta"><a class="pill" href="#research">See the research</a><a class="pill ghost" href="https://github.com/akoK3">GitHub</a></div>
+  </div>
+</header>
+
+<section id="research"><div class="w">
+  <p class="kicker r">Research</p>
+  <h2 class="r">Catching market stress as it happens.</h2>
+  <p class="intro r">Four detectors, updated every five minutes, tested on two decades of SPY. A time-of-day volatility feature <strong>improved detection and forecasts</strong>. Simple volatility rules <strong>matched the models</strong>, and I reported that too.</p>
+  <div class="spec r">
+    <div><strong>2.2M+</strong><span>one-minute SPY bars, 2003–2026</span></div>
+    <div><strong>4</strong><span>detectors: two HMMs, a semi-Markov model and change-point detection</span></div>
+    <div><strong>43</strong><span>protocol amendments, each SHA-256 logged</span></div>
+    <div><strong>344/344</strong><span>runs reproduced exactly by a separate implementation</span></div>
+  </div>
+  <div class="duo">
+    <div class="tile r"><h3>What it found</h3><p class="tag">Independent research · Faculty mentor Dr. Cagla Yildirim · Mar 2026 – present</p><ul>
+      <li>Time-of-day-adjusted volatility beat returns-only baselines, replicated on 2019–2022 and 2025–2026.</li>
+      <li>A post hoc benchmark found simple volatility rules matched or beat the detectors.</li>
+      <li>No evidence that SPY switches predict moves in Treasuries, credit, gold or the dollar.</li></ul></div>
+    <div class="tile r"><h3>How it was done</h3><p class="tag">Built to be checked</p><ul>
+      <li>113 candidate features screened to 13, with walk-forward testing.</li>
+      <li>Label-free evaluation: planted volatility breaks, next-hour forecasts, Fed statements.</li>
+      <li>A live forward test is running now. Preprint in preparation.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="dark" id="projects"><div class="w">
+  <p class="kicker r">Projects</p>
+  <h2 class="r">Systems that run in the real world.</h2>
+  <p class="intro r">Live engines, tested backends and fine-tuned models, each with <strong>evidence attached</strong>.</p>
+  <div class="duo">
+    <div class="tile r"><h3>MarketLens</h3><p class="tag"><a href="https://marketlens-k1k1.duckdns.org">Live site</a> · <a href="https://github.com/akoK3/MarketLens">GitHub</a> · Python, Flask, Claude API, GCP</p>
+      <p class="big grad">61/61</p><p class="tag">historical alarms reproduced in replay</p><ul>
+      <li>Live SPY regime engine on Google Cloud, streaming data through a frozen Gaussian HMM.</li>
+      <li>Hash-chained, Bitcoin-anchored logs for a pre-registered forward test; 51-case test suite.</li>
+      <li>Market dashboard sending up to 35 indicators and news to Claude for structured risk analysis.</li></ul></div>
+    <div class="tile r"><h3>CampusFix</h3><p class="tag">Team capstone · backend, migrations, AI, evaluation</p>
+      <p class="big grad">+9.1 pts</p><p class="tag">priority accuracy after fine-tuning Qwen3-8B (44.2% → 53.3%, p = 0.027)</p><ul>
+      <li>FastAPI and PostgreSQL backend with leased job queues, retries and safety escalation; 9 of 24 migrations, 300+ tests.</li>
+      <li>Local DeepSeek-R1 8B classifier via Ollama with strict validation and human-review fallback.</li>
+      <li>QLoRA fine-tune evaluated on 120 synthetic cases, urgent recall unchanged.</li></ul></div>
+    <div class="tile wide r"><h3>MarketRegimeAI</h3><p class="tag"><a href="https://github.com/akoK3/MarketRegimeAI">GitHub</a> · Python, scikit-learn, XGBoost</p>
+      <p style="margin:0">A supervised pipeline for SPY regime classification: 25+ engineered features and four model families, including Random Forest and XGBoost, with walk-forward validation.</p></div>
+  </div>
+</div></section>
+
+<section id="teaching"><div class="w">
+  <p class="kicker r">Teaching</p>
+  <h2 class="r">Explaining it is part of understanding it.</h2>
+  <div class="duo" style="margin-top:44px">
+    <div class="tile r"><h3>Teaching Assistant</h3><p class="tag">Data Structures &amp; Algorithms · Dept. of Computer Science · Sep 2026 – present</p>
+      <p style="margin:0">About 25 students across two courses, in class and one-on-one. Started a student group chat and flags recurring difficulties to the instructor before exams.</p></div>
+    <div class="tile r"><h3>Peer Tutor</h3><p class="tag">Data Structures &amp; Algorithms · Feb 2026 – present</p>
+      <p style="margin:0">One-on-one sessions on time complexity, recursion, trees and graph algorithms in Python.</p></div>
+  </div>
+</div></section>
+
+<section id="skills" style="background:var(--panel)"><div class="w">
+  <p class="kicker r">Toolkit</p>
+  <h2 class="r" style="margin-bottom:48px">What I work with.</h2>
+  <div class="skills r">
+    <div><h4>Programming</h4><p>Python, SQL, JavaScript</p></div>
+    <div><h4>Machine learning</h4><p>Hugging Face Transformers, PEFT/QLoRA, scikit-learn, XGBoost, hidden Markov models</p></div>
+    <div><h4>Backend and data</h4><p>FastAPI, Flask, PostgreSQL (Supabase), SQLite, pandas, NumPy</p></div>
+    <div><h4>Infrastructure</h4><p>Git, Linux, systemd, Google Cloud, Ollama</p></div>
+    <div><h4>Education</h4><p>B.S. Computer Science, Minor in Mathematics. GPA 3.72, Dean's List, Honors Program</p></div>
+    <div><h4>Languages</h4><p>English and Georgian (fluent), Russian (intermediate)</p></div>
+  </div>
+</div></section>
+
+<section class="dark" id="contact" style="text-align:center"><div class="w">
+  <h2 class="r">Let's talk.</h2>
+  <p class="intro r" style="margin:0 auto 32px">ajvarsheishvili@caldwell.edu</p>
+  <div class="cta r"><a class="pill" href="https://www.linkedin.com/in/akaki-jvarsheishvili-891b40359/">LinkedIn</a><a class="pill ghost" href="https://github.com/akoK3">GitHub</a></div>
+</div></section>
+
+<footer><div class="w"><span>Akaki Jvarsheishvili · Caldwell, NJ</span><span>Applying to MS in Computer Science programs, Fall 2027</span></div></footer>
+
+<script>
+{
+const p=document.getElementById('vol');
+let s=11;const rnd=()=>{s=(s*9301+49297)%233280;return s/233280};
+let v=.25,d='';const N=240;
+for(let i=0;i<N;i++){const st=(i>70&&i<110)||(i>170&&i<200);v+=((st?.78:.22)-v)*.12+(rnd()-.5)*(st?.24:.08);v=Math.max(.04,Math.min(.96,v));d+=(i?'L':'M')+(i*1200/(N-1)).toFixed(1)+' '+(200-v*200).toFixed(1)+' '}
+p.setAttribute('d',d);
+const io=new IntersectionObserver(es=>{for(const e of es)if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}},{threshold:.12});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+}
+</script>
+</body>
+</html>
